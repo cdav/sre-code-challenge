@@ -3,12 +3,11 @@ from flaskext.mysql import MySQL
 from config import Config
 
 
-mysql = MySQL()
 app = Flask(__name__)
 
 app.config.from_object(Config)
-app.config.from_envvar('FLASK_ENV_CONF')
 
+mysql = MySQL()
 mysql.init_app(app)
 
 @app.route("/message")

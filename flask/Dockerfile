@@ -1,13 +1,18 @@
-FROM python:3.8-buster
+FROM python:3.7-stretch
+
+EXPOSE 5000
+ENV FLASK_APP=main.py 
 
 COPY requirements.txt /tmp/
-RUN pip installl --no-cache-dir -r requirements.txt
-
-RUN adduser appuser
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+ 
+RUN useradd appuser
 WORKDIR /home/appuser
 RUN chown appuser:appuser /home/appuser
 USER appuser
 
-COPY main.py ./
+COPY --chown=appuser:appuser main.py ./
+COPY --chown=appuser:appuser config.py ./
 
-CMD "flask run"
+ENTRYPOINT [ "flask" ]
+CMD [ "run", "--host=0.0.0.0"] 
