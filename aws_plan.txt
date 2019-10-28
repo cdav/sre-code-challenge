@@ -1,1 +1,9 @@
+flask app
 codepipeline > ecr > ecs(fargate) > cloudwatch logs
+
+mysql 
+codepipeline > rds
+
+routes
+public for endpoint
+private for flask>rds
