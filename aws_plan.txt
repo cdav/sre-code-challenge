@@ -1,0 +1,1 @@
+codepipeline > ecr > ecs(fargate) > cloudwatch logs
