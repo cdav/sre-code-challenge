@@ -1,0 +1,26 @@
+version: "3.7"
+services: 
+  flask:
+    image: scc-flask:development 
+    container_name: scc-flask
+    build: 
+      context: ./flask
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+    networks: 
+      - scc-net
+
+  mysql:
+    image: scc-mysql:development 
+    container_name: scc-mysql
+    build: 
+      context: ./mysql
+      dockerfile: Dockerfile
+    networks: 
+      - scc-net
+
+networks: 
+  scc-net:
