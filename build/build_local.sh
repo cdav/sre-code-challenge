@@ -41,4 +41,4 @@ fi
 docker run -d -p 5000:5000 --rm --name scc-flask --network=$PROJECT-net -e FLASK_ENV="development" "$FLASK_TAG:$VER" 
  
 # run mysql container
-docker run -d --rm --name scc-mysql --network=$PROJECT-net "$MYSQL_TAG:$VER" 
+docker run -d --rm --name scc-mysql --network=$PROJECT-net "$MYSQL_TAG:$VER"

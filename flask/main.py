@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import jsonify
 from flaskext.mysql import MySQL
 from config import Config
 
@@ -14,7 +15,7 @@ mysql.init_app(app)
 def message():
     cursor = mysql.connect().cursor()
     cursor.execute("SELECT message from mytable where 1")
-    return cursor.fetchone()
+    return jsonify(cursor.fetchone()), 200
 
 if __name__ == "__main__":
     app.run()

@@ -14,5 +14,7 @@ USER appuser
 COPY --chown=appuser:appuser main.py ./
 COPY --chown=appuser:appuser config.py ./
 
+RUN chmod -R 700 /home/appuser
+
 ENTRYPOINT [ "flask" ]
 CMD [ "run", "--host=0.0.0.0"] 
