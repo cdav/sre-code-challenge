@@ -1,3 +1,7 @@
 venv
 configs
 __pycache__
+*tfstate*
+lock.json
+terraform*
+*.tf
