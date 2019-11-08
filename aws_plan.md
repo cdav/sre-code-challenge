@@ -15,6 +15,14 @@
   - defined with cloudformation or terraform
   - uses the same ssm parameter store values for db config
 
+# Logging
+
+- Cloudwatch logging configured for both deployments
+- metrics to query/dashboard:
+  - route response times
+  - count errors (db, bad http responses)
+- alarms for when those metrics are bad
+
 
 # Misc  
 
