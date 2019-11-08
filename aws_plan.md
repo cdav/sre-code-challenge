@@ -16,7 +16,7 @@
   - uses the same ssm parameter store values for db config
 
 
-# Best Practices  
+# Misc  
 
 - Use builder images to remove dependencies on dockerhub and pypi
 - Create separate pipelines for develop and master deployments
